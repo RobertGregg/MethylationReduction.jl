@@ -3,7 +3,19 @@ uuid = "546c65bd-e2f6-4fbd-8512-f447e2a4d020"
 authors = ["Robert Gregg <robwgregg@gmail.com> and contributors"]
 version = "1.0.0-DEV"
 
+[deps]
+CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+
 [compat]
+CUDA = "5.6.1"
+Dates = "1.11.0"
+LinearAlgebra = "1.11.0"
+Random = "1.11.0"
+SparseArrays = "1.11.0"
 julia = "1.11"
 
 [extras]
