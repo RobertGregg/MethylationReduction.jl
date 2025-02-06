@@ -55,3 +55,25 @@ k = 10
 nmf = NMFCache(X, k; α=0.2);
 solveNMF(nmf, verbose=false, maxiter=200)
 ```
+
+# Connecting to R
+
+There are a few R libraries that can interface between R and Julia. Here we will demonstrate the `JuliaConnectoR` library.
+
+```R
+library(JuliaConnectoR)
+
+#Import the nmf functionality
+MethylationReduction <- juliaImport("MethylationReduction")
+
+#Create a random data matrix in R
+m <- matrix(runif(1000*100) , ncol = 100)
+
+#Run the NMF algorithm
+nmf <- MethylationReduction$NMFCache(m, 20, α=0.1)
+MethylationReduction$solveNMF(nmf, verbose=F)
+
+#Extract the latent variables
+W <- nmf$W
+
+```
